@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Calculadora_JSA.MainPage"
+    BackgroundColor="#000000">
+
+    <Grid
+        Padding="18"
+        RowDefinitions="2*,*,*,*,*,*"
+        ColumnDefinitions="*,*,*,*"
+        RowSpacing="10"
+        ColumnSpacing="10">
+
+        <!-- Pantalla de resultados -->
+        <Label
+            x:Name="lblResultado"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Text="0"
+            FontSize="64"
+            TextColor="#FFFFFF"
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="End"
+            VerticalOptions="Fill"
+            LineBreakMode="HeadTruncation"
+            Margin="0,0,8,15" />
+
+        <!-- Fila 1: funciones -->
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="C"
+            BackgroundColor="#A5A5A5"
+            TextColor="#000000"
+            FontSize="24"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnClearClicked" />
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="⌫"
+            BackgroundColor="#A5A5A5"
+            TextColor="#000000"
+            FontSize="24"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnDeleteLastClicked" />
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="2"
+            Text="%"
+            BackgroundColor="#A5A5A5"
+            TextColor="#000000"
+            FontSize="24"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnOperatorClicked" />
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="3"
+            Text="÷"
+            BackgroundColor="#FF9F0A"
+            TextColor="#FFFFFF"
+            FontSize="28"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnOperatorClicked" />
+
+        <!-- Fila 2: 7, 8, 9 y multiplicación -->
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="7"
+            BackgroundColor="#333333"
+            TextColor="#FFFFFF"
+            FontSize="24"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnNumberClicked" />
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Text="8"
+            BackgroundColor="#333333"
+            TextColor="#FFFFFF"
+            FontSize="24"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnNumberClicked" />
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="2"
+            Text="9"
+            BackgroundColor="#333333"
+            TextColor="#FFFFFF"
+            FontSize="24"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnNumberClicked" />
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="3"
+            Text="×"
+            BackgroundColor="#FF9F0A"
+            TextColor="#FFFFFF"
+            FontSize="28"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnOperatorClicked" />
+
+        <!-- Fila 3: 4, 5, 6 y resta -->
+        <Button
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="4"
+            BackgroundColor="#333333"
+            TextColor="#FFFFFF"
+            FontSize="24"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnNumberClicked" />
+
+        <Button
+            Grid.Row="3"
+            Grid.Column="1"
+            Text="5"
+            BackgroundColor="#333333"
+            TextColor="#FFFFFF"
+            FontSize="24"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnNumberClicked" />
+
+        <Button
+            Grid.Row="3"
+            Grid.Column="2"
+            Text="6"
+            BackgroundColor="#333333"
+            TextColor="#FFFFFF"
+            FontSize="24"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnNumberClicked" />
+
+        <Button
+            Grid.Row="3"
+            Grid.Column="3"
+            Text="−"
+            BackgroundColor="#FF9F0A"
+            TextColor="#FFFFFF"
+            FontSize="28"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnOperatorClicked" />
+
+        <!-- Fila 4: 1, 2, 3 y suma -->
+        <Button
+            Grid.Row="4"
+            Grid.Column="0"
+            Text="1"
+            BackgroundColor="#333333"
+            TextColor="#FFFFFF"
+            FontSize="24"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnNumberClicked" />
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="1"
+            Text="2"
+            BackgroundColor="#333333"
+            TextColor="#FFFFFF"
+            FontSize="24"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnNumberClicked" />
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="2"
+            Text="3"
+            BackgroundColor="#333333"
+            TextColor="#FFFFFF"
+            FontSize="24"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnNumberClicked" />
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="3"
+            Text="+"
+            BackgroundColor="#FF9F0A"
+            TextColor="#FFFFFF"
+            FontSize="28"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnOperatorClicked" />
+
+        <!-- Fila 5: cero, punto decimal e igual -->
+        <Button
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Text="0"
+            BackgroundColor="#333333"
+            TextColor="#FFFFFF"
+            FontSize="24"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnNumberClicked" />
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="2"
+            Text="."
+            BackgroundColor="#333333"
+            TextColor="#FFFFFF"
+            FontSize="24"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnNumberClicked" />
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="3"
+            Text="="
+            BackgroundColor="#FF9F0A"
+            TextColor="#FFFFFF"
+            FontSize="28"
+            CornerRadius="40"
+            Padding="0"
+            BorderWidth="0"
+            Clicked="OnCalculateClicked" />
+
+    </Grid>
+
+</ContentPage>
+
